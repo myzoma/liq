@@ -1,0 +1,92 @@
+{
+  "app": {
+    "name": "محلل السيولة الرقمية",
+    "version": "2.0.0",
+    "author": "فريق التطوير",
+    "description": "تطبيق متقدم لتحليل تدفقات السيولة في أسواق العملات الرقمية"
+  },
+  "api": {
+    "binance": {
+      "baseUrl": "https://api.binance.com/api/v3",
+      "endpoints": {
+        "trades": "/trades",
+        "ticker24hr": "/ticker/24hr",
+        "klines": "/klines"
+      },
+      "limits": {
+        "requestsPerSecond": 10,
+        "requestsPerMinute": 1200
+      }
+    },
+    "backup": {
+      "enabled": true,
+      "sources": ["coinbase", "kraken", "huobi"]
+    }
+  },
+  "chart": {
+    "defaultTimeframe": "1h",
+    "colors": {
+      "primary": "#6c5ce7",
+      "inflow": "#00b894",
+      "outflow": "#ff7675",
+      "background": "#2d3436"
+    },
+    "animation": {
+      "duration": 1500,
+      "easing": "easeInOutQuart"
+    }
+  },
+  "sectors": {
+    "البلوكشين العامة": {
+      "weight": 1.2,
+      "priority": 1,
+      "description": "منصات البلوكشين الأساسية"
+    },
+    "الديفاي": {
+      "weight": 1.1,
+      "priority": 2,
+      "description": "التمويل اللامركزي"
+    },
+    "الميتافيرس": {
+      "weight": 1.0,
+      "priority": 3,
+      "description": "العوالم الافتراضية والألعاب"
+    },
+    "التخزين اللامركزي": {
+      "weight": 0.9,
+      "priority": 4,
+      "description": "حلول التخزين الموزع"
+    },
+    "الخصوصية": {
+      "weight": 0.8,
+      "priority": 5,
+      "description": "عملات الخصوصية والأمان"
+    },
+    "العملات المستقرة": {
+      "weight": 0.7,
+      "priority": 6,
+      "description": "العملات المربوطة بالدولار"
+    },
+    "الجسور والطبقات": {
+      "weight": 1.0,
+      "priority": 7,
+      "description": "حلول التشغيل البيني"
+    },
+    "إنترنت الأشياء": {
+      "weight": 0.9,
+      "priority": 8,
+      "description": "شبكات الأجهزة المتصلة"
+    }
+  },
+  "notifications": {
+    "enabled": true,
+    "duration": 3000,
+    "position": "top-right"
+  },
+  "performance": {
+    "cacheEnabled": true,
+    "cacheDuration": 300000,
+    "maxRetries": 3,
+    "timeout": 10000
+  }
+}
